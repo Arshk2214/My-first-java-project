@@ -1,5 +1,5 @@
 package operatorsJava;
-
+// this is number verification class
 public class NumbersVerification {
 	int number = -60;
 	int a, b;
