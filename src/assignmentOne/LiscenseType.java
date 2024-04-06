@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class LiscenseType {
 	Scanner type = new Scanner(System.in);
-	int age = 16;
+	int age = 16; // value can vary to see different outcome
 
 	void liscenseType() {
 		if (age >= 16) {
@@ -16,13 +16,12 @@ public class LiscenseType {
 				if (doYouHaveG1 == true) {
 					System.out.println("Do you have G2");
 					boolean doYouHaveG2 = type.nextBoolean();
-					if(doYouHaveG2==true) {
-					System.out.println("Congrats on passing G");
+					if (doYouHaveG2 == true) {
+						System.out.println("Congrats on passing G");
+					} else {
+						System.out.println("Congrats on passing G2");
+					}
 				} else {
-					System.out.println("Congrats on passing G2");
-				}
-				}
-				else {
 					System.out.println("Congrats on G1");
 				}
 			} else {
