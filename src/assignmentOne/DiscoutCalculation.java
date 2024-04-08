@@ -17,14 +17,14 @@ public class DiscoutCalculation {
 		if (promoCode == 5) {
 			System.out.println("Discounted Price is : " + discountedPrice);
 
-		}
-		if (promoCode == 10) {
+		} else if (promoCode == 10) {
 			System.out.println("Discounted Price is : " + discountedPrice);
 
-		}
-		if (promoCode == 20) {
+		} else if (promoCode == 20) {
 			System.out.println("Discounted Price is : " + discountedPrice);
 
+		} else {
+			System.out.println("Invalid code");
 		}
 
 	}
