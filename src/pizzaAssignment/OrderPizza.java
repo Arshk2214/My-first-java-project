@@ -23,7 +23,7 @@ public class OrderPizza {
 
 			System.out.println("Would you like to add any additional topping");
 			choice = sc.next();
-			if (choice.equals( "Yes")) {
+			if (choice.equals("Yes")) {
 				System.out.println(" would you like to add peproni ,cheese or Both");
 				topping = sc.next();
 				switch (topping) {
@@ -44,19 +44,17 @@ public class OrderPizza {
 					System.out.println(" Plese enter correct order ");
 					break;
 
-				
 				}
-			}else if(choice.equals("No")) {
+			} else if (choice.equals("No")) {
 				System.out.println(" The total price is = " + smallPizzaPrice);
 				break;
 			}
 			break;
-		
 
 		case "Medium":
 			System.out.println("Would you like to add any additional topping");
 			choice = sc.next();
-			if (choice.equals( "Yes")) {
+			if (choice.equals("Yes")) {
 				System.out.println(" would you like to add peproni ,cheese or Both");
 				topping = sc.next();
 				switch (topping) {
@@ -77,20 +75,18 @@ public class OrderPizza {
 					System.out.println(" Plese enter correct order ");
 					break;
 
-				
 				}
-			} else if(choice.equals("No")) {
+			} else if (choice.equals("No")) {
 				System.out.println(" The total price is = " + mediumPizzaPrice);
 				break;
 			}
 			break;
-		
-		
+
 		case "Large":
 			System.out.println("Would you like to add any additional topping");
 			choice = sc.next();
-			if (choice.equals( "Yes")) {
-			
+			if (choice.equals("Yes")) {
+
 				System.out.println(" would you like to add peproni ,cheese or Both");
 				topping = sc.next();
 				switch (topping) {
@@ -113,7 +109,7 @@ public class OrderPizza {
 					System.out.println(" Plese enter correct order ");
 					break;
 				}
-			} else if(choice.equals("No")) {
+			} else if (choice.equals("No")) {
 				System.out.println(" The total price is = " + largePizzaPrice);
 				break;
 			}
