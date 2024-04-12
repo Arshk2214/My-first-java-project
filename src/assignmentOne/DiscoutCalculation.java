@@ -8,7 +8,7 @@ public class DiscoutCalculation {
 	double originalPrice = 55.55;
 	double discountedPrice;
 
-	void CalculateDiscount() {
+	void calculateDiscount() {
 		System.out.println("Enter Promo Code");
 		int promoCode = value.nextInt();
 
