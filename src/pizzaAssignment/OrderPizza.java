@@ -29,15 +29,15 @@ public class OrderPizza {
 				switch (topping) {
 				case "Peproni":
 					totalPrice = smallPizzaPrice + additionalToppingPepSmall;
-					System.out.println("The total price is = " + totalPrice + " Enjoy your food ");
+					System.out.println("The total price is = $ " + totalPrice + " Enjoy your food ");
 					break;
 				case "Cheese":
 					totalPrice = smallPizzaPrice + extraCheese;
-					System.out.println("The total price is = " + totalPrice + " Enjoy your food ");
+					System.out.println("The total price is = $ " + totalPrice + " Enjoy your food ");
 					break;
 				case "Both":
 					totalPrice = smallPizzaPrice + extraCheese + additionalToppingPepSmall;
-					System.out.println("The total price is = " + totalPrice + " Enjoy your food ");
+					System.out.println("The total price is = $ " + totalPrice + " Enjoy your food ");
 
 					break;
 				default:
@@ -46,7 +46,7 @@ public class OrderPizza {
 
 				}
 			} else if (choice.equals("No")) {
-				System.out.println(" The total price is = " + smallPizzaPrice);
+				System.out.println(" The total price is = $ " + smallPizzaPrice);
 				break;
 			}
 			break;
@@ -60,15 +60,15 @@ public class OrderPizza {
 				switch (topping) {
 				case "Peproni":
 					totalPrice = mediumPizzaPrice + additionalToppingPepMedLarge;
-					System.out.println("The total price is = " + totalPrice + " Enjoy your food ");
+					System.out.println("The total price is = $ " + totalPrice + " Enjoy your food ");
 					break;
 				case "Cheese":
 					totalPrice = mediumPizzaPrice + extraCheese;
-					System.out.println("The total price is = " + totalPrice + " Enjoy your food ");
+					System.out.println("The total price is = $ " + totalPrice + " Enjoy your food ");
 					break;
 				case "Both":
 					totalPrice = mediumPizzaPrice + extraCheese + additionalToppingPepMedLarge;
-					System.out.println("The total price is = " + totalPrice + " Enjoy your food ");
+					System.out.println("The total price is = $ " + totalPrice + " Enjoy your food ");
 
 					break;
 				default:
@@ -77,7 +77,7 @@ public class OrderPizza {
 
 				}
 			} else if (choice.equals("No")) {
-				System.out.println(" The total price is = " + mediumPizzaPrice);
+				System.out.println(" The total price is = $ " + mediumPizzaPrice);
 				break;
 			}
 			break;
@@ -92,16 +92,16 @@ public class OrderPizza {
 				switch (topping) {
 				case "Peproni":
 					totalPrice = largePizzaPrice + additionalToppingPepMedLarge;
-					System.out.println("The total price is = " + totalPrice + " Enjoy your food ");
+					System.out.println("The total price is = $ " + totalPrice + " Enjoy your food ");
 					break;
 				case "Cheese":
 					totalPrice = largePizzaPrice + extraCheese;
-					System.out.println("The total price is = " + totalPrice + " Enjoy your food ");
+					System.out.println("The total price is = $ " + totalPrice + " Enjoy your food ");
 					break;
 				case "Both":
 					totalPrice = largePizzaPrice + extraCheese + additionalToppingPepMedLarge;
 					;
-					System.out.println("The total price is = " + totalPrice + " Enjoy your food ");
+					System.out.println("The total price is = $ " + totalPrice + " Enjoy your food ");
 
 					break;
 
@@ -110,7 +110,7 @@ public class OrderPizza {
 					break;
 				}
 			} else if (choice.equals("No")) {
-				System.out.println(" The total price is = " + largePizzaPrice);
+				System.out.println(" The total price is = $ " + largePizzaPrice);
 				break;
 			}
 			break;
