@@ -10,34 +10,50 @@ public class WaterTank {
 	 * to its capacity using these buckets. Also include a mechanism in your program
 	 * to stop the tank from over flowing.
 	 */
-	int water;
-	int waterInTank;
+
+	String water;
+
+	int waterOne;
+	int total;
+	int waterTwo;
 
 	Scanner sc = new Scanner(System.in);
 
 	void fillWaterInWaterTank() {
+		System.out.println("How much water is already in tank ?");
+		waterOne = sc.nextInt();
+		if (waterOne >= 95) {
+			System.out.println("Tank is already full.Adding more water can result in overflow.");
+			waterOne = sc.nextInt();
+		}
 
-		System.out.println(" How much water is already in the tank ? ");
-		water = sc.nextInt();
-		for (int i = 0; i < 101; i++) {
-			if (water > 0 && water < 101) {
-				waterInTank = water + i;
-				if (waterInTank == 50) {
-					System.out.println(" Watertank is half full");
+		for (int i = waterOne; i < 101; i += waterTwo) {
+
+			System.out.println(" Do you want to add water ?");
+			water = sc.next();
+			if (water.equals("yes")) {
+				System.out.println(" How much water you want to add ?");
+				waterTwo = sc.nextInt();
+
+				if (waterTwo > 10) {
+					System.out.println(" bucket capacity is 10.Please enter again ");
+					waterTwo = sc.nextInt();
 				}
-
-				if (waterInTank == 100) {
-
-					System.out.println(" Please stop pouring .Tank is full");
+				total = i + waterTwo;
+				if (total >= 95) {
+					System.out.println(
+							" Tank has reached to its full capacity .Adding more water can result into overfilling");
+					break;
 
 				}
-			} else {
-				System.out.println(" Value can not be less than 0 and greater than 101.Please enter again.");
-				water = sc.nextInt();
+				if (waterTwo >= 0 && waterTwo <= 10) {
+					System.out.println("The water in tank is " + total);
+
+				}
 
 			}
+
 		}
 
 	}
-
 }

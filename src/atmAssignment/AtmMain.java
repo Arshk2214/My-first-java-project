@@ -2,7 +2,7 @@ package atmAssignment;
 
 public class AtmMain {
 	public static void main(String[] args) {
-		AtmPin ap = new AtmPin();
+		AtmLogin ap = new AtmLogin();
 		ap.enterYourPin();
 
 	}
