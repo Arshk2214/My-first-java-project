@@ -6,6 +6,16 @@ public class SortClients {
 	String membershipNumber;
 	double height;
 
+	public SortClients(String name, String dob, String number, double clientHeight) {
+		clientName = name;
+		dateOfBirth = dob;
+		membershipNumber = number;
+		height = clientHeight;
+	}
+	public SortClients() {
+		
+	}
+
 	public String getClientName() {
 
 		return clientName;
@@ -41,15 +51,14 @@ public class SortClients {
 				return client[i];
 
 			}
-			System.out.println(" not valid entry ");
-			return client[i];
+
 		}
 		return null;
 
 	}
 
 	public void displayName() {
-      
+
 		System.out.println(" Name is " + getClientName());
 		System.out.println(" Date of Birth  is " + getDateOfBirth());
 		System.out.println(" Height  is " + getHeight());
