@@ -3,7 +3,8 @@ package stringAssignmnet;
 public class PrefixSuffix {
 
 	public boolean isPrefix(String word, String prefix) {
-		if (word.startsWith(prefix)){
+		prefix = prefix.substring(0, prefix.length() - 1);
+		if (word.startsWith(prefix)) {
 			return true;
 		}
 
@@ -12,6 +13,7 @@ public class PrefixSuffix {
 	}
 
 	public boolean isSuffix(String wordOne, String suffix) {
+		suffix = suffix.substring(1);
 		if (wordOne.endsWith(suffix)) {
 			return true;
 		}
@@ -27,7 +29,7 @@ public class PrefixSuffix {
 		}
 	}
 
-	public void displayResult1(String wordOne, String suffix) {
+	public void displayResultOne(String wordOne, String suffix) {
 		if (isSuffix(wordOne, suffix)) {
 			System.out.println(" word has sufix ");
 		} else {

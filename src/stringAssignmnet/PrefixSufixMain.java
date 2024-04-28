@@ -5,6 +5,8 @@ public class PrefixSufixMain {
 		PrefixSuffix ps = new PrefixSuffix();
 
 		ps.displayResult("automation", "auto-");
-		ps.displayResult1("arachnophobia", "-phobia");
+		ps.displayResult("retrospect", "sub-");
+		ps.displayResultOne("arachnophobia", "-phobia");
+		ps.displayResultOne("vocation", "-logy");
 	}
 }
