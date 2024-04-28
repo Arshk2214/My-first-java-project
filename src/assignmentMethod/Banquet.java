@@ -9,7 +9,6 @@ public class Banquet {
 	double tax;
 	double cessTotal;
 	double totalAmount;
-	double priceAsPerGuest;
 
 	public Banquet(double bookingCost, double food, double tip, double beverageCost) {
 		super();
@@ -20,26 +19,14 @@ public class Banquet {
 
 	}
 
-	public Banquet() {
-	}
+	public double checkValidInput(int numberOfPeople) {
+		if (bookingCost >= 0 && food >= 0 && tip >= 0 && beverageCost >= 0) {
+			System.out.println(" THe total cost is " + calculateTheTotalCost(numberOfPeople));
 
-	public Banquet numberOfGuests(Banquet[] prices, int numberOfPeople) {
-		for (int i = 0; i < prices.length; i++) {
-			if (numberOfPeople <= 40) {
-				return prices[0];
-			}
-			if (numberOfPeople > 40 && numberOfPeople <= 80) {
-				return prices[1];
-			}
-			if (numberOfPeople > 80 && numberOfPeople <= 150) {
-				return prices[2];
-			}
-			if (numberOfPeople > 150) {
-				return prices[3];
-			}
-
+		} else {
+			System.out.println("Please enter valid amount");
 		}
-		return null;
+		return numberOfPeople;
 	}
 
 	public double calculateBaseCost() {
@@ -71,8 +58,8 @@ public class Banquet {
 
 	}
 
-	public double calculateTheTotalCost() {
-		totalAmount = totalOfBaseCost + tax + cessTotal;
+	public double calculateTheTotalCost(int numberOfPeople) {
+		totalAmount = calculateBaseCost() + calculateTax() + calculateCess(numberOfPeople);
 		return totalAmount;
 	}
 
