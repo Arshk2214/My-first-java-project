@@ -13,7 +13,7 @@ public class AtmThree extends BankingRules implements BankOperations {
 	}
 
 	public boolean isPinValid(String enteredPin) {
-		if (pin == enteredPin) {
+		if (pin.equals(enteredPin)) {
 			System.out.println(" You have logged in sucessfully ");
 			return true;
 		} else {

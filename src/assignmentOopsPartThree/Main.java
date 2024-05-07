@@ -3,7 +3,7 @@ package assignmentOopsPartThree;
 import java.util.Scanner;
 
 public class Main {
-	public static void main(String[] args, double totalFundsAvailable) {
+	public static void main(String[] args ) {
 		Scanner sc = new Scanner(System.in);
 
 		AtmThree john = new AtmThree("123456", "John Adams", 5089.10, "1234", "John123456");
@@ -22,11 +22,11 @@ public class Main {
 					switch (choice) {
 					case 1:
 
-						john.withdrawFunds(totalFundsAvailable);
+						john.withdrawFunds(john.getTotalFundsAvailable());
 
 						break;
 					case 2:
-						john.depositFunds(totalFundsAvailable);
+						john.depositFunds(john.getTotalFundsAvailable());
 
 						break;
 					case 3:
@@ -52,11 +52,11 @@ public class Main {
 					switch (choice) {
 					case 1:
 
-						johnOnline.withdrawFunds(totalFundsAvailable);
+						johnOnline.withdrawFunds(johnOnline.getTotalFundsAvailable());
 
 						break;
 					case 2:
-						johnOnline.depositFunds(totalFundsAvailable);
+						johnOnline.depositFunds(johnOnline.getTotalFundsAvailable());
 
 						break;
 					case 3:

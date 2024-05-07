@@ -21,7 +21,7 @@ public class ClientAccountDetails {
 
 	public boolean isPinValid(String enteredPin) {
 
-		if (pin == enteredPin) {
+		if (pin.equals(enteredPin)) {
 			return true;
 		}
 		return false;
