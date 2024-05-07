@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class BankOperationMain {
 	public static void main(String[] args) {
 
-		ClientAccountDetails johnAdams = new ClientAccountDetails("123456", "John Adams", 5089.10, 1234, "John123456");
+		ClientAccountDetails johnAdams = new ClientAccountDetails("123456", "John Adams", 5089.10, "1234", "John123456");
 		BankOperation atm = new Atm();
 		BankOperation online = new OnlineBanking();
 		Scanner sc = new Scanner(System.in);
@@ -18,7 +18,7 @@ public class BankOperationMain {
 
 			System.out.println(" Enter pin ");
 
-			int enteredPin = sc.nextInt();
+			String enteredPin = sc.next();
 			if (johnAdams.isPinValid(enteredPin))
 
 			{ // casting((sub class)object).method(arguments);
@@ -29,7 +29,7 @@ public class BankOperationMain {
 			}
 		} else if (answer.equals("atm") && service.equals("deposit")) {
 			System.out.println(" Enter pin ");
-			int enteredPin = sc.nextInt();
+			String enteredPin = sc.next();
 			if (johnAdams.isPinValid(enteredPin))
 
 			{

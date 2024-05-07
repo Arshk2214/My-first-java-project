@@ -2,11 +2,8 @@ package assignmentOopsPartThree;
 
 public interface BankOperations {
 
-	
-	public  void withdrawFunds();
+	public void withdrawFunds(double totalFundsAvailable);
 
-    public void depositFunds(); 
+	public void depositFunds(double totalFundsAvailable);
 
-	
-	
 }

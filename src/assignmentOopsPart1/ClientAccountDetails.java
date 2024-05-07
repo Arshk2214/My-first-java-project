@@ -4,10 +4,10 @@ public class ClientAccountDetails {
 	private String accountNumber;
 	private String nameOfAccountHolder;
 	private double totalFundsAvailable;
-	private int pin;
-	private String onlinePassword;
+	protected String pin;
+	protected String onlinePassword;
 
-	public ClientAccountDetails(String accountNumber, String nameOfAccountHolder, double totalFundsAvailable, int pin,
+	public ClientAccountDetails(String accountNumber, String nameOfAccountHolder, double totalFundsAvailable, String pin,
 			String onlinePassword) {
 		super();
 		this.accountNumber = accountNumber;
@@ -17,7 +17,9 @@ public class ClientAccountDetails {
 		this.onlinePassword = onlinePassword;
 	}
 
-	public boolean isPinValid(int enteredPin) {
+	
+
+	public boolean isPinValid(String enteredPin) {
 
 		if (pin == enteredPin) {
 			return true;
@@ -41,7 +43,7 @@ public class ClientAccountDetails {
 		this.totalFundsAvailable = totalFundsAvailable;
 	}
 
-	public void setPin(int pin) {
+	public void setPin(String pin) {
 		this.pin = pin;
 	}
 
@@ -57,4 +59,5 @@ public class ClientAccountDetails {
 		return nameOfAccountHolder;
 	}
 
+	
 }
