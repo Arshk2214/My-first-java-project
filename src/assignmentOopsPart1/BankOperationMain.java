@@ -5,63 +5,87 @@ import java.util.Scanner;
 public class BankOperationMain {
 	public static void main(String[] args) {
 
-		ClientAccountDetails johnAdams = new ClientAccountDetails("123456", "John Adams", 5089.10, "1234", "John123456");
-		BankOperation atm = new Atm();
-		BankOperation online = new OnlineBanking();
+		BankOperation bankoperation;
 		Scanner sc = new Scanner(System.in);
-		System.out.println(" which operation would you like to perform today?");
+		System.out.println(" which operation would you like to perform today?(atm/online)");
 		String answer = sc.next();
-		System.out.println(" what service would you like to do ?");
+		System.out.println(" what service would you like to do ?(withdraw/deposit//balance)");
 		String service = sc.next();
 
 		if (answer.equals("atm") && service.equals("withdraw")) {
-
+			bankoperation = new Atm();
 			System.out.println(" Enter pin ");
 
 			String enteredPin = sc.next();
-			if (johnAdams.isPinValid(enteredPin))
+			if (bankoperation.johnAdams.isPinValid(enteredPin))
 
-			{ // casting((sub class)object).method(arguments);
-
-				((Atm) atm).withdrawFunds(johnAdams.getTotalFundsAvailable());
+			{
+				bankoperation.withdrawFunds();
 			} else {
 				System.out.println(" invalid Credentials");
 			}
 		} else if (answer.equals("atm") && service.equals("deposit")) {
+			bankoperation = new Atm();
 			System.out.println(" Enter pin ");
 			String enteredPin = sc.next();
-			if (johnAdams.isPinValid(enteredPin))
+			if (bankoperation.johnAdams.isPinValid(enteredPin))
 
 			{
-				((Atm) atm).depositFunds(johnAdams.getTotalFundsAvailable());
+				bankoperation.depositFunds();
 			} else {
 				System.out.println(" invalid Credentials");
 			}
 		}
 
 		else if (answer.equals("online") && service.equals("deposit")) {
-
+			bankoperation = new OnlineBanking();
 			System.out.println(" Enter password ");
 			String enteredPassword = sc.next();
-			if (johnAdams.isPasswordValid(enteredPassword)) {
-
-				((OnlineBanking) online).depositFunds(johnAdams.getTotalFundsAvailable());
+			if (bankoperation.johnAdams.isPasswordValid(enteredPassword)) {
+				bankoperation.depositFunds();
 			} else {
 				System.out.println(" invalid Credentials");
 			}
 		}
 
 		else if (answer.equals("online") && service.equals("withdraw")) {
+			bankoperation = new OnlineBanking();
 			System.out.println(" Enter password ");
 			String enteredPassword = sc.next();
-			if (johnAdams.isPasswordValid(enteredPassword)) {
+			if (bankoperation.johnAdams.isPasswordValid(enteredPassword)) {
 
-				((OnlineBanking) online).withdrawFunds(johnAdams.getTotalFundsAvailable());
+				bankoperation.withdrawFunds();
 			} else {
 				System.out.println(" invalid Credentials");
 			}
-
 		}
+			else if (answer.equals("atm") && service.equals("balance")) {
+				bankoperation = new Atm();
+				System.out.println(" Enter pin ");
+
+				String enteredPin = sc.next();
+				if (bankoperation.johnAdams.isPinValid(enteredPin))
+
+				{
+					
+					System.out.println(" Balance is:"+bankoperation.johnAdams.getTotalFundsAvailable());
+				} else {
+					System.out.println(" invalid Credentials");
+				}
+				
+			}
+			else if (answer.equals("online") && service.equals("balance")) {
+				bankoperation = new OnlineBanking();
+				System.out.println(" Enter password ");
+				String enteredPassword = sc.next();
+				if (bankoperation.johnAdams.isPasswordValid(enteredPassword)) {
+
+					System.out.println(" Balance is:"+bankoperation.johnAdams.getTotalFundsAvailable());
+				} else {
+					System.out.println(" invalid Credentials");
+				}
+			}
+		
 		sc.close();
 
 	}

@@ -4,35 +4,25 @@ public class ClientAccountDetails {
 	private String accountNumber;
 	private String nameOfAccountHolder;
 	private double totalFundsAvailable;
-	protected String pin;
-	protected String onlinePassword;
+	private String pin;
+	private String onlinePassword;
 
-	public ClientAccountDetails(String accountNumber, String nameOfAccountHolder, double totalFundsAvailable, String pin,
-			String onlinePassword) {
+	public String getPin() {
+		return pin;
+	}
+
+	public String getOnlinePassword() {
+		return onlinePassword;
+	}
+
+	public ClientAccountDetails(String accountNumber, String nameOfAccountHolder, double totalFundsAvailable,
+			String pin, String onlinePassword) {
 		super();
 		this.accountNumber = accountNumber;
 		this.nameOfAccountHolder = nameOfAccountHolder;
 		this.totalFundsAvailable = totalFundsAvailable;
 		this.pin = pin;
 		this.onlinePassword = onlinePassword;
-	}
-
-	
-
-	public boolean isPinValid(String enteredPin) {
-
-		if (pin.equals(enteredPin)) {
-			return true;
-		}
-		return false;
-	}
-
-	public boolean isPasswordValid(String enteredPassword) {
-
-		if (onlinePassword.equals(enteredPassword)) {
-			return true;
-		}
-		return false;
 	}
 
 	public double getTotalFundsAvailable() {
@@ -59,5 +49,19 @@ public class ClientAccountDetails {
 		return nameOfAccountHolder;
 	}
 
-	
+	public boolean isPinValid(String enteredPin) {
+
+		if (pin.equals(enteredPin)) {
+			return true;
+		}
+		return false;
+	}
+
+	public boolean isPasswordValid(String enteredPassword) {
+
+		if (onlinePassword.equals(enteredPassword)) {
+			return true;
+		}
+		return false;
+	}
 }

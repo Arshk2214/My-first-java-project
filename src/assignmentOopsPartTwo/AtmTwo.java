@@ -1,35 +1,34 @@
 package assignmentOopsPartTwo;
+
 import java.util.Scanner;
+
 public class AtmTwo extends BankOperationsTwo {
-	Scanner sc = new Scanner(System.in);
+
 	public AtmTwo(String accountNumber, String nameOfAccountHolder, double totalFundsAvailable, String pin,
 			String onlinePassword) {
 		super(accountNumber, nameOfAccountHolder, totalFundsAvailable, pin, onlinePassword);
-
+		// TODO Auto-generated constructor stub
 	}
 
-	public boolean isPinValid(String enteredPin) {
-		if (pin.equals(enteredPin)) {
-			return true;
-		}
-
-		return false;
-	}
+	Scanner sc = new Scanner(System.in);
 
 	@Override
-	public void changePinPassword(String enteredPin) {
+	public boolean changePinPassword(String enteredPin) {
 
 		if (isPinValid(enteredPin)) {
 			System.out.println(" enter pin to change");
 			String newPin = sc.next();
-			if (newPin.equals(pin) || newPin.length() < 4) {
-				System.out.println(" Pin can not be same as old pin and pin digits need to be atleast four");
+			if (newPin.equals(getPin()) || newPin.length() < 4) {
+				System.out.println("New PIN cannot be the same as the old PIN and must have at least four digits.");
+				return false;
 			} else {
-				pin = newPin;
+				setPin(newPin);
 				System.out.println(" Pin changed sucessfully ");
+				return true;
 			}
 		} else {
 			System.out.println("Invalid credentials");
+			return false;
 		}
 
 	}

@@ -7,13 +7,13 @@ public class OnlineBanking extends BankOperation {
 
 	double amount;
 
-	public void withdrawFunds(double totalFundsAvailable) {
+	public void withdrawFunds() {
 
 		System.out.println(" How much you would like to withdraw ?");
 		amount = sc.nextDouble();
-		if (totalFundsAvailable >= amount && amount >= 0) {
-			balance = totalFundsAvailable - amount;
-			System.out.println(" New Balance is :$" + balance);
+		if (johnAdams.getTotalFundsAvailable() >= amount && amount >= 0) {
+			setBalance(johnAdams.getTotalFundsAvailable() - amount);
+			System.out.println(" New Balance is :$" + getBalance());
 		} else {
 			System.out.println(" Invalid entry");
 		}
@@ -24,8 +24,8 @@ public class OnlineBanking extends BankOperation {
 		System.out.println(" How much you would like to deposit ?");
 		amount = sc.nextDouble();
 		if (amount > 0) {
-			balance = totalFundsAvailable + amount;
-			System.out.println(" Balnce :$" + balance);
+			setBalance(johnAdams.getTotalFundsAvailable() + amount);
+			System.out.println(" Balnce :$" + getBalance());
 		} else {
 			System.out.println(" invalid entry ");
 		}

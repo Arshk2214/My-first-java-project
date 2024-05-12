@@ -1,9 +1,11 @@
 package assignmentOopsPartThree;
 
 public interface BankOperations {
-  
-	public void withdrawFunds(double totalFundsAvailable);
 
-	public void depositFunds(double totalFundsAvailable);
+	public void withdrawFunds();
+
+	public void depositFunds();
+
+	public boolean changePinPassword(String enteredPin);
 
 }

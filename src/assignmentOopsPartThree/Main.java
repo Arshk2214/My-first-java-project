@@ -3,17 +3,17 @@ package assignmentOopsPartThree;
 import java.util.Scanner;
 
 public class Main {
-	public static void main(String[] args ) {
+	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
-		AtmThree john = new AtmThree("123456", "John Adams", 5089.10, "1234", "John123456");
-		OnlineBankingThree johnOnline = new OnlineBankingThree("123456", "John Adams", 5089.10, "1234", "John123456");
-		System.out.println(" Which operation would you like to choose today ?");
+		AtmThree john = new AtmThree();
+		OnlineBankingThree johnOnline = new OnlineBankingThree();
+		System.out.println(" Which operation would you like to choose today ?(Atm/Online)");
 		String operation = sc.next();
 		if (operation.equals("Atm")) {
 			System.out.println(" Please enter pin ");
-			String enteredPIn = sc.next();
-			if (john.isPinValid(enteredPIn)) {
+			String enteredPin = sc.next();
+			if (john.changePinPassword(enteredPin)) {
 				boolean continueBanking = true;
 				while (continueBanking) {
 					System.out.println(" Plese press 1 for withdraw ,2 for Deposit,3 for exit");
@@ -22,15 +22,16 @@ public class Main {
 					switch (choice) {
 					case 1:
 
-						john.withdrawFunds(john.getTotalFundsAvailable());
+						john.withdrawFunds();
 
 						break;
 					case 2:
-						john.depositFunds(john.getTotalFundsAvailable());
+						john.depositFunds();
 
 						break;
 					case 3:
 						continueBanking = false;
+						System.out.println(" Thankyou for choosing our bank.");
 						break;
 					default:
 						System.out.println("invalid choice");
@@ -38,12 +39,12 @@ public class Main {
 					}
 				}
 			}
-			System.out.println(" Thankyou for choosing our bank.");
+
 		}
 		if (operation.equals("Online")) {
 			System.out.println(" Please enter password ");
 			String enteredPassword = sc.next();
-			if (johnOnline.isPasswordValid(enteredPassword)) {
+			if (johnOnline.changePinPassword(enteredPassword)) {
 				boolean continueBanking = true;
 				while (continueBanking) {
 					System.out.println(" Plese press 1 for withdraw ,2 for Deposit,3 for exit");
@@ -52,15 +53,16 @@ public class Main {
 					switch (choice) {
 					case 1:
 
-						johnOnline.withdrawFunds(johnOnline.getTotalFundsAvailable());
+						johnOnline.withdrawFunds();
 
 						break;
 					case 2:
-						johnOnline.depositFunds(johnOnline.getTotalFundsAvailable());
+						johnOnline.depositFunds();
 
 						break;
 					case 3:
 						continueBanking = false;
+						System.out.println(" Thankyou for choosing our bank.");
 						break;
 					default:
 						System.out.println("invalid choice");
@@ -68,10 +70,11 @@ public class Main {
 					}
 
 				}
-				System.out.println(" Thankyou for choosing our bank.");
+
 			}
 
 		}
+
 		sc.close();
 	}
 

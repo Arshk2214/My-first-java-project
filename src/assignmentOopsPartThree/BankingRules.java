@@ -2,16 +2,12 @@ package assignmentOopsPartThree;
 
 import assignmentOopsPart1.ClientAccountDetails;
 
-public abstract class BankingRules extends ClientAccountDetails {
+public abstract class BankingRules {
+	ClientAccountDetails johnAdams = new ClientAccountDetails("123456", "John Adams", 5089.10, "1234", "John123456");
 
-	public BankingRules(String accountNumber, String nameOfAccountHolder, double totalFundsAvailable, String pin,
-			String onlinePassword) {
-		super(accountNumber, nameOfAccountHolder, totalFundsAvailable, pin, onlinePassword);
-		// TODO Auto-generated constructor stub
-	}
+	public abstract int dailyWithdrawalLimit();
 
-	public abstract int dailyWithdrawalLimit(int dailyLimit);
+	public abstract void numberOfTransactionsLimit();
 
-	public abstract void numberOfTransactionsLimit(int limit);
-
+	
 }

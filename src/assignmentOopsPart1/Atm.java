@@ -7,28 +7,27 @@ public class Atm extends BankOperation {
 	double amount;
 	Scanner sc = new Scanner(System.in);
 
-	// method overloading
-	public void withdrawFunds(double totalFundsAvailable) {
+	public void withdrawFunds() {
 
 		System.out.println(" How much you would like to withdraw ?");
 		amount = sc.nextDouble();
 
-		if (totalFundsAvailable >= amount && amount % 10 == 0 && amount >= 0) {
-			balance = totalFundsAvailable - amount;
-			System.out.println(" New Balance is :$" + balance);
+		if (johnAdams.getTotalFundsAvailable() >= amount && amount % 10 == 0 && amount >= 0) {
+			setBalance(johnAdams.getTotalFundsAvailable() - amount);
+			System.out.println(" New Balance is :$" +getBalance());
 		} else {
 			System.out.println(" Invalid entry ");
 		}
 
 	}
 
-	public void depositFunds(double totalFundsAvailable) {
+	public void depositFunds() {
 
 		System.out.println(" How much you would like to deposit ?");
 		amount = sc.nextDouble();
 		if (amount > 0) {
-			balance = totalFundsAvailable + amount;
-			System.out.println(" New Balance is :$" + balance);
+			setBalance(johnAdams.getTotalFundsAvailable() + amount);
+			System.out.println(" New Balance is :$" + getBalance());
 		} else {
 			System.out.println(" amount needs to be greater than zero");
 		}

@@ -11,28 +11,24 @@ public class OnlineBankingTwo extends BankOperationsTwo {
 		// TODO Auto-generated constructor stub
 	}
 
-	public boolean isPasswordValid(String enteredPassword) {
-		if (onlinePassword.equals(enteredPassword)) {
-			return true;
-		}
-		return false;
-	}
-
 	@Override
-	public void changePinPassword(String enteredPassword) {
+	public boolean changePinPassword(String enteredPassword) {
 		if (isPasswordValid(enteredPassword)) {
 			System.out.println(" Enter new password");
 			String newPassword = sc.next();
-			if (newPassword.equals(onlinePassword) || newPassword.length() > 8 || newPassword.contains("&")
-					|| newPassword.contains("$") || newPassword.contains("@")) {
+			if (newPassword.equals(getOnlinePassword()) || newPassword.length() > 8
+					|| newPassword.matches(".*[&@$].*")) {
 				System.out.println(
-						" Password can not be same as old password and password can't have less than 8 characters and  these special characters (&,$, @)");
+						"Password cannot be the same as the old password, must have at least 8 characters, and cannot contain these special characters (&, $, @).");
+				return false;
 			} else {
-				onlinePassword = newPassword;
+				setOnlinePassword(newPassword);
 				System.out.println(" Password changed ");
+				return true;
 			}
 		} else {
 			System.out.println("Invalid credentials");
+			return false;
 		}
 
 	}
