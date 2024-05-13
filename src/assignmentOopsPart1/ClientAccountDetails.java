@@ -1,6 +1,9 @@
 package assignmentOopsPart1;
 
+import java.util.Scanner;
+
 public class ClientAccountDetails {
+	Scanner sc = new Scanner(System.in);
 	private String accountNumber;
 	private String nameOfAccountHolder;
 	private double totalFundsAvailable;
@@ -51,16 +54,46 @@ public class ClientAccountDetails {
 
 	public boolean isPinValid(String enteredPin) {
 
-		if (pin.equals(enteredPin)) {
+		if (getPin().equals(enteredPin)) {
+			System.out.println(" You have logged in sucessfully ");
 			return true;
+		} else {
+			for (int i = 0; i < 2; i++) {
+				int maximumAttempts = 2;
+				System.out.println(" Invalid pin.Please try again.Attepmts left :" + (maximumAttempts - i));
+
+				String enterPin = sc.next();
+				if (getPin().equals(enterPin)) {
+					System.out.println(" You have logged in sucessfully ");
+					return true;
+				} else if (i == 1) {
+					System.out.println("Account is locked");
+				}
+			}
+			return false;
 		}
-		return false;
 	}
 
 	public boolean isPasswordValid(String enteredPassword) {
-
-		if (onlinePassword.equals(enteredPassword)) {
+		if (getOnlinePassword().equals(enteredPassword)) {
+			System.out.println(" You have logged in sucessfully ");
 			return true;
+		}
+
+		else {
+			for (int i = 0; i < 2; i++) {
+				int maximumAttempts = 2;
+				System.out.println(" Invalid pin.Please try again.Attepmts left :" + (maximumAttempts - i));
+
+				String enterPasswordOne = sc.next();
+				if (enterPasswordOne.equals(getOnlinePassword())) {
+					System.out.println(" You have logged in sucessfully ");
+					return true;
+				} else if (i == 1) {
+					System.out.println("Account is locked");
+				}
+
+			}
 		}
 		return false;
 	}

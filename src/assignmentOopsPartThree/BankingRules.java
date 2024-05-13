@@ -9,5 +9,4 @@ public abstract class BankingRules {
 
 	public abstract void numberOfTransactionsLimit();
 
-	
 }

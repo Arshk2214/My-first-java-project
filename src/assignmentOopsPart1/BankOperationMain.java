@@ -21,8 +21,6 @@ public class BankOperationMain {
 
 			{
 				bankoperation.withdrawFunds();
-			} else {
-				System.out.println(" invalid Credentials");
 			}
 		} else if (answer.equals("atm") && service.equals("deposit")) {
 			bankoperation = new Atm();
@@ -32,8 +30,6 @@ public class BankOperationMain {
 
 			{
 				bankoperation.depositFunds();
-			} else {
-				System.out.println(" invalid Credentials");
 			}
 		}
 
@@ -43,8 +39,6 @@ public class BankOperationMain {
 			String enteredPassword = sc.next();
 			if (bankoperation.johnAdams.isPasswordValid(enteredPassword)) {
 				bankoperation.depositFunds();
-			} else {
-				System.out.println(" invalid Credentials");
 			}
 		}
 
@@ -55,37 +49,31 @@ public class BankOperationMain {
 			if (bankoperation.johnAdams.isPasswordValid(enteredPassword)) {
 
 				bankoperation.withdrawFunds();
+			}
+		} else if (answer.equals("atm") && service.equals("balance")) {
+			bankoperation = new Atm();
+			System.out.println(" Enter pin ");
+
+			String enteredPin = sc.next();
+			if (bankoperation.johnAdams.isPinValid(enteredPin))
+
+			{
+
+				System.out.println(" Balance is:" + bankoperation.johnAdams.getTotalFundsAvailable());
 			} else {
 				System.out.println(" invalid Credentials");
 			}
+
+		} else if (answer.equals("online") && service.equals("balance")) {
+			bankoperation = new OnlineBanking();
+			System.out.println(" Enter password ");
+			String enteredPassword = sc.next();
+			if (bankoperation.johnAdams.isPasswordValid(enteredPassword)) {
+
+				System.out.println(" Balance is:" + bankoperation.johnAdams.getTotalFundsAvailable());
+			}
 		}
-			else if (answer.equals("atm") && service.equals("balance")) {
-				bankoperation = new Atm();
-				System.out.println(" Enter pin ");
 
-				String enteredPin = sc.next();
-				if (bankoperation.johnAdams.isPinValid(enteredPin))
-
-				{
-					
-					System.out.println(" Balance is:"+bankoperation.johnAdams.getTotalFundsAvailable());
-				} else {
-					System.out.println(" invalid Credentials");
-				}
-				
-			}
-			else if (answer.equals("online") && service.equals("balance")) {
-				bankoperation = new OnlineBanking();
-				System.out.println(" Enter password ");
-				String enteredPassword = sc.next();
-				if (bankoperation.johnAdams.isPasswordValid(enteredPassword)) {
-
-					System.out.println(" Balance is:"+bankoperation.johnAdams.getTotalFundsAvailable());
-				} else {
-					System.out.println(" invalid Credentials");
-				}
-			}
-		
 		sc.close();
 
 	}

@@ -13,10 +13,11 @@ public class Main {
 		if (operation.equals("Atm")) {
 			System.out.println(" Please enter pin ");
 			String enteredPin = sc.next();
-			if (john.changePinPassword(enteredPin)) {
+			if (john.johnAdams.isPinValid(enteredPin)) {
 				boolean continueBanking = true;
 				while (continueBanking) {
-					System.out.println(" Plese press 1 for withdraw ,2 for Deposit,3 for exit");
+					System.out.println(
+							" Plese press 1 for withdraw ,2 for Deposit,3 for Change Pin/Password,4 for Balance,5 For Exit");
 					int choice = sc.nextInt();
 
 					switch (choice) {
@@ -25,14 +26,25 @@ public class Main {
 						john.withdrawFunds();
 
 						break;
+
 					case 2:
 						john.depositFunds();
 
 						break;
 					case 3:
+						john.changePinPassword(enteredPin);
+
+						break;
+					case 4:
+
+						System.out.println(" Balance is: $ " + john.johnAdams.getTotalFundsAvailable());
+						break;
+
+					case 5:
 						continueBanking = false;
 						System.out.println(" Thankyou for choosing our bank.");
 						break;
+
 					default:
 						System.out.println("invalid choice");
 						break;
@@ -44,10 +56,11 @@ public class Main {
 		if (operation.equals("Online")) {
 			System.out.println(" Please enter password ");
 			String enteredPassword = sc.next();
-			if (johnOnline.changePinPassword(enteredPassword)) {
+			if (johnOnline.johnAdams.isPasswordValid(enteredPassword)) {
 				boolean continueBanking = true;
 				while (continueBanking) {
-					System.out.println(" Plese press 1 for withdraw ,2 for Deposit,3 for exit");
+					System.out.println(
+							" Plese press 1 for withdraw ,2 for Deposit,3 for Change Pin/Password,4 for Balance,5 For Exit");
 					int choice = sc.nextInt();
 
 					switch (choice) {
@@ -61,6 +74,15 @@ public class Main {
 
 						break;
 					case 3:
+						johnOnline.changePinPassword(enteredPassword);
+
+						break;
+					case 4:
+
+						System.out.println(" Balance is: $ " + johnOnline.johnAdams.getTotalFundsAvailable());
+						break;
+
+					case 5:
 						continueBanking = false;
 						System.out.println(" Thankyou for choosing our bank.");
 						break;

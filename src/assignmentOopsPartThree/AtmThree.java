@@ -65,25 +65,19 @@ public class AtmThree extends BankingRules implements BankOperations {
 	}
 
 	@Override
-	public boolean changePinPassword(String enteredPin) {
-		if (johnAdams.getPin().equals(enteredPin)) {
-			System.out.println(" You have logged in sucessfully ");
-			return true;
-		} else {
-			for (int i = 0; i < 2; i++) {
-				int maximumAttempts = 2;
-				System.out.println(" Invalid pin.Please try again.Attepmts left :" + (maximumAttempts - i));
 
-				String enterPin = sc.next();
-				if (johnAdams.getPin().equals(enterPin)) {
-					System.out.println(" You have logged in sucessfully ");
-                 return true;
-				}
-				else if (i == 1) {
-					System.out.println("Account is locked");
-				}
-			}
+	public boolean changePinPassword(String enteredPin) {
+
+		System.out.println(" enter pin to change");
+		String newPin = sc.next();
+		if (newPin.equals(johnAdams.getPin()) || newPin.length() < 4) {
+			System.out.println("New PIN cannot be the same as the old PIN and must have at least four digits.");
+			System.out.println("Select option 3 again to change pin");
 			return false;
+		} else {
+			johnAdams.setPin(newPin);
+			System.out.println(" Pin changed sucessfully ");
+			return true;
 		}
 
 	}

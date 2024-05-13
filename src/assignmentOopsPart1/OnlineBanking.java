@@ -19,7 +19,7 @@ public class OnlineBanking extends BankOperation {
 		}
 	}
 
-	public void depositFunds(double totalFundsAvailable) {
+	public void depositFunds() {
 
 		System.out.println(" How much you would like to deposit ?");
 		amount = sc.nextDouble();

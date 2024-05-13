@@ -65,28 +65,21 @@ public class OnlineBankingThree extends BankingRules implements BankOperations {
 
 	@Override
 	public boolean changePinPassword(String enteredPassword) {
-		if (johnAdams.getOnlinePassword().equals(enteredPassword)) {
-			System.out.println(" You have logged in sucessfully ");
+
+		System.out.println(" Enter new password");
+		String newPassword = sc.next();
+		if (newPassword.equals(johnAdams.getOnlinePassword()) || newPassword.length() > 8
+				|| newPassword.matches(".*[&@$].*")) {
+			System.out.println(
+					"Password cannot be the same as the old password, must have at least 8 characters, and cannot contain these special characters (&, $, @).");
+			System.out.println("Select option 3 again to change password");
+			return false;
+		} else {
+			johnAdams.setOnlinePassword(newPassword);
+			System.out.println(" Password changed ");
 			return true;
 		}
 
-		else {
-			for (int i = 0; i < 2; i++) {
-				int maximumAttempts = 2;
-				System.out.println(" Invalid pin.Please try again.Attepmts left :" + (maximumAttempts - i));
-
-				String enterPasswordOne = sc.next();
-				if (enterPasswordOne.equals(johnAdams.getOnlinePassword())) {
-					System.out.println(" You have logged in sucessfully ");
-                 return true;
-				}
-				else if (i == 1) {
-					System.out.println("Account is locked");
-				}
-
-			}
-		}
-		return false;
 	}
 
 }

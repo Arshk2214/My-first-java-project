@@ -9,7 +9,7 @@ public class BankOperationssMain {
 
 		AtmTwo john = new AtmTwo("123456", "John Adams", 5089.10, "1234", "John123456");
 		OnlineBankingTwo johnOnline = new OnlineBankingTwo("123456", "John Adams", 5089.10, "1234", "John123456");
-		System.out.println(" Which operation would you like to choose today ?");
+		System.out.println(" Which operation would you like to choose today ?(Atm/Online)");
 		String operation = sc.next();
 
 		switch (operation) {
