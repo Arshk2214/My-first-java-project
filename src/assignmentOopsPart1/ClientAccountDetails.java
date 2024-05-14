@@ -52,7 +52,7 @@ public class ClientAccountDetails {
 		return nameOfAccountHolder;
 	}
 
-	public boolean isPinValid(String enteredPin) {
+	public final boolean isPinValid(String enteredPin) {
 
 		if (getPin().equals(enteredPin)) {
 			System.out.println(" You have logged in sucessfully ");
@@ -74,7 +74,7 @@ public class ClientAccountDetails {
 		}
 	}
 
-	public boolean isPasswordValid(String enteredPassword) {
+	public final  boolean isPasswordValid(String enteredPassword) {
 		if (getOnlinePassword().equals(enteredPassword)) {
 			System.out.println(" You have logged in sucessfully ");
 			return true;

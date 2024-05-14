@@ -17,7 +17,7 @@ public class Main {
 				boolean continueBanking = true;
 				while (continueBanking) {
 					System.out.println(
-							" Plese press 1 for withdraw ,2 for Deposit,3 for Change Pin/Password,4 for Balance,5 For Exit");
+							" Plese press 1 for withdraw ,2 for Deposit,3 for Change Pin/Password,4 for Balance,5 For withdrawal limit,6 for exit ");
 					int choice = sc.nextInt();
 
 					switch (choice) {
@@ -39,8 +39,11 @@ public class Main {
 
 						System.out.println(" Balance is: $ " + john.johnAdams.getTotalFundsAvailable());
 						break;
-
 					case 5:
+
+						System.out.println(" Daily withdrawal limit $ " + BankingRules.dailyWithdrawalLimit());
+						break;
+					case 6:
 						continueBanking = false;
 						System.out.println(" Thankyou for choosing our bank.");
 						break;
@@ -60,7 +63,7 @@ public class Main {
 				boolean continueBanking = true;
 				while (continueBanking) {
 					System.out.println(
-							" Plese press 1 for withdraw ,2 for Deposit,3 for Change Pin/Password,4 for Balance,5 For Exit");
+							" Plese press 1 for withdraw ,2 for Deposit,3 for Change Pin/Password,4 for Balance,5 For withdrawal limit,6 for exit ");
 					int choice = sc.nextInt();
 
 					switch (choice) {
@@ -81,8 +84,11 @@ public class Main {
 
 						System.out.println(" Balance is: $ " + johnOnline.johnAdams.getTotalFundsAvailable());
 						break;
-
 					case 5:
+
+						System.out.println(" Daily withdrawal limit $ " + BankingRules.dailyWithdrawalLimit());
+						break;
+					case 6:
 						continueBanking = false;
 						System.out.println(" Thankyou for choosing our bank.");
 						break;

@@ -19,7 +19,7 @@ public class OnlineBankingThree extends BankingRules implements BankOperations {
 				System.out.println(" Insufficent Funds..Please add sufficent funds to withdraw ");
 			} else if (enteredAmount == 0) {
 				System.out.println(" Amount must not be zero");
-			} else if (totalWithdrawal + enteredAmount > 1000) {
+			} else if (totalWithdrawal + enteredAmount > dailyWithdrawalLimit()) {
 
 				System.out.println(" Withdraw limit for a day is $1000 . ");
 
@@ -48,12 +48,6 @@ public class OnlineBankingThree extends BankingRules implements BankOperations {
 		} else {
 			System.out.println(" New balance" + johnAdams.getTotalFundsAvailable());
 		}
-
-	}
-
-	@Override
-	public int dailyWithdrawalLimit() {
-		return 1000;
 
 	}
 

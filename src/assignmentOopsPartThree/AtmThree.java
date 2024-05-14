@@ -7,10 +7,7 @@ public class AtmThree extends BankingRules implements BankOperations {
 	int totalWithdrawal;
 	int enteredAmount;
 
-	@Override
-	public int dailyWithdrawalLimit() {
-		return 1000;
-	}
+	
 
 	@Override
 	public void numberOfTransactionsLimit() {
@@ -32,7 +29,7 @@ public class AtmThree extends BankingRules implements BankOperations {
 				System.out.println(" Amount must not be zero");
 			}
 
-			else if (totalWithdrawal + enteredAmount > 1000) {
+			else if (totalWithdrawal + enteredAmount > dailyWithdrawalLimit()) {
 
 				System.out.println(" Withdraw limit for a day is $1000 .");
 
