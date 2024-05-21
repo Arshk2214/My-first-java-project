@@ -41,30 +41,30 @@ public class Student extends PersonalClass {
 	}
 
 	@Override
-	public void describeRole() {
-		System.out.println(" Person is student");
+	public String describeRole() {
+		return "student";
 
 	}
 
 	public final void determineStream() {
-		
+
 		if (percentage >= 85) {
-			System.out.println(" Allocated stream is Non-Medical " + getName()
-					+ " can enroll in courses like  Physics, Mathematics");
+			System.out.println("Allocated stream is Non-Medical ");
+			System.out.println(getName() + " can enroll in courses like  Physics, Mathematics");
 		}
 
 		if (percentage >= 75 && percentage <= 84.99) {
-			System.out.println(
-					" Allocated stream is Medical " + getName() + " can enroll in courses like   Biology, Chemistry");
+			System.out.println(" Allocated stream is Medical ");
+			System.out.println(getName() + " can enroll in courses like  Biology, Chemistry");
 		}
 		if (percentage >= 65 && percentage <= 74.99) {
-			System.out.println(" Allocated stream is Commerce " + getName()
-					+ " can enroll in courses like  Economics, Business Studies");
+			System.out.println(" Allocated stream is Commerce " + getName());
+			System.out.println(getName() + " can enroll in courses like  Economics, Business Studie");
 		}
 
 		if (percentage < 65) {
-			System.out.println(
-					" Allocated stream is Arts " + getName() + " can enroll in courses like  History, Literature");
+			System.out.println(" Allocated stream is Arts ");
+			System.out.println(getName() + " can enroll in courses like  History, Literature");
 		}
 
 	}

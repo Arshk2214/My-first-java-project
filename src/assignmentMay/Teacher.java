@@ -1,12 +1,12 @@
 package assignmentMay;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Teacher extends PersonalClass {
 
 	@Override
-	public void describeRole() {
-		System.out.println(" Person is Teacher");
+	public String describeRole() {
+		return "teacher";
 
 	}
 
@@ -14,7 +14,7 @@ public class Teacher extends PersonalClass {
 	private int salary;
 	String[] courses = new String[10];
 
-	ArrayList<Integer> listOfRatings = new ArrayList<Integer>();
+	LinkedList<Integer> listOfRatings = new LinkedList<Integer>();
 
 	public String getEmployeeId() {
 		return EmployeeId;
@@ -32,16 +32,16 @@ public class Teacher extends PersonalClass {
 		this.salary = salary;
 	}
 
-	public ArrayList<Integer> getListOfRatings() {
+	public LinkedList<Integer> getListOfRatings() {
 		return listOfRatings;
 	}
 
-	public void setListOfRatings(ArrayList<Integer> listOfRatings) {
+	public void setListOfRatings(LinkedList<Integer> listOfRatings) {
 		this.listOfRatings = listOfRatings;
 	}
 
-	public Teacher(String name, int age, String gender, String employeeId, int salary, String[] courses, ArrayList<Integer> listOfRatings
-			) {
+	public Teacher(String name, int age, String gender, String employeeId, int salary, String[] courses,
+			LinkedList<Integer> listOfRatings) {
 		super(name, age, gender);
 		EmployeeId = employeeId;
 		this.salary = salary;

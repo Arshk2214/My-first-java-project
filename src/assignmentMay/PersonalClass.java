@@ -40,6 +40,6 @@ public abstract class PersonalClass {
 		this.gender = gender;
 	}
 
-	public abstract void describeRole();
+	public abstract String describeRole();
 
 }
