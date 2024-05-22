@@ -32,21 +32,24 @@ public class School {
 		listOfstudents.add(student);
 	}
 
-	public void addTeacher(Teacher teacher) {
+	public void addTeacher() {
 
-		listOfteachers.add(teacher);
+		LinkedList<Integer> listOfRatings = new LinkedList<Integer>();
+		String[] courses = { "Physics, Mathematics, Biology, Chemistry, Economics, Business, History, Literature" };
+		listOfteachers.add(new Teacher("John Adams", 40, "male", "E001", 50000, courses, listOfRatings));
+		listOfteachers.add(new Teacher("Keisha johnson", 30, "Female", "E002", 50000, courses, listOfRatings));
+		listOfteachers.add(new Teacher("Mike brown", 50, "male", "E003", 50000, courses, listOfRatings));
+		listOfteachers.add(new Teacher("John mathew", 30, "male", "E004", 50000, courses, listOfRatings));
 
 	}
 
-	double newRating;
-
 	public void updateRating(String teacherName, int rating) {
 		boolean teacherExists = false;
-
+		 
 		for (Teacher teacher : listOfteachers) {
-			if (teacherName.equals(teacher.getName())) {
+			if (teacherName.equalsIgnoreCase(teacher.getName())) {
 				teacher.addRating(rating);
-				newRating = teacher.calculateAverageRating();
+				double newRating = teacher.calculateAverageRating();
 				teacherExists = true;
 				System.out.println("Updated Teacher Rating");
 				System.out.println("Teacher: " + teacherName);
@@ -56,15 +59,9 @@ public class School {
 		}
 
 		if (!teacherExists) {
-			LinkedList<Integer> listOfRatings = new LinkedList<Integer>();
-			String[] courses = { "Physics, Mathematics, Biology, Chemistry, Economics, Business, History, Literature" };
-			Teacher newTeacher = new Teacher(teacherName, 40, "Female", "E001", 50000, courses, listOfRatings);
-			newTeacher.addRating(rating);
-			listOfteachers.add(newTeacher);
 
-			System.out.println("______Updated Teacher Rating_____");
-			System.out.println("Teacher: " + teacherName);
-			System.out.println("New Average rating: " + newTeacher.calculateAverageRating());
+			System.out.println(" Please enter valid name");
+			
 		}
 
 	}

@@ -5,13 +5,13 @@ public class Rocket implements Spaceship {
 	@Override
 	public boolean launch() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean land() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
