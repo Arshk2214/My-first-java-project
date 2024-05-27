@@ -23,11 +23,18 @@ public class ReadFile {
 		}
 
 		catch (InvalidPathException p) {
+
+			System.out.println("Invalid file path. Please check the file location.");
+
 			p.printStackTrace();
+
 		}
 
 		catch (IOException e) {
 			// TODO Auto-generated catch block
+
+			System.out.println("Error reading the file. Make sure the file exists and is accessible.");
+
 			e.printStackTrace();
 		}
 	}

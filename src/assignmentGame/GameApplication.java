@@ -4,14 +4,22 @@ import java.util.ArrayList;
 
 import java.util.Scanner;
 
-public class FinalApplication {
-	String alphabet;
-	int wrongGuess = 0;
-	int correctGuesses = 0;
+public class GameApplication {
+
 	Scanner sc = new Scanner(System.in);
-	ArrayList<Character> storeWrongGuess = new ArrayList<>();
 
 	public void gameApplication(ReadFile readfile) {
+		final int maximunGuess = 5;
+
+		String alphabet;
+
+		int wrongGuess = 0;
+
+		int correctGuesses = 0;
+
+		String guess;
+
+		ArrayList<Character> storeWrongGuess = new ArrayList<>();
 
 		String name = readfile.selectRandomName();
 
@@ -21,13 +29,13 @@ public class FinalApplication {
 
 		System.out.println(" You have guessed (0) wrong letters:");
 
-		while (wrongGuess < 5) {
+		while (wrongGuess < maximunGuess) {
 
 			System.out.println("Guess a letter:");
 
 			alphabet = sc.next();
 
-			char result = alphabet.charAt(0);
+			char alphabetOne = alphabet.charAt(0);
 
 			char[] selectedName = name.toCharArray();
 
@@ -35,9 +43,9 @@ public class FinalApplication {
 
 			for (int i = 0; i < selectedName.length; i++) {
 
-				if (Character.toLowerCase(selectedName[i]) == Character.toLowerCase(result)) {
+				if (Character.toLowerCase(selectedName[i]) == Character.toLowerCase(alphabetOne)) {
 
-					changedName = changedName.substring(0, i) + result + changedName.substring(i + 1);
+					changedName = changedName.substring(0, i) + alphabetOne + changedName.substring(i + 1);
 
 					System.out.println("You are guessing:" + changedName);
 
@@ -49,21 +57,24 @@ public class FinalApplication {
 
 				}
 			}
+
 			if (!isGuessCorrect) {
 				wrongGuess++;
 
-				storeWrongGuess.add(result);
+				storeWrongGuess.add(alphabetOne);
+
+				guess = storeWrongGuess.toString();
 
 				System.out.println("You are guessing " + changedName);
 
-				System.out.println("You have guessed " + wrongGuess + " wrong letters:" + storeWrongGuess.toString());
+				System.out.println("You have guessed " + wrongGuess + " wrong letters:" + guess);
 
 			}
 			if (correctGuesses == changedName.length()) {
 
-				System.out.println(" You win");
+				System.out.println("---Huraah! you have won the game---");
 
-				System.out.println(" Congrats you have guessed the word " + name + " correctly");
+				System.out.println("You have guessed the word " + name + " correctly");
 
 				break;
 
@@ -76,7 +87,6 @@ public class FinalApplication {
 			}
 
 		}
-		sc.close();
 
 	}
 
